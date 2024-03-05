@@ -57,7 +57,7 @@ const ItemHoriScroll = ({items}) => {
     </button>
     {arr.map((item) => (
       <li key={item.id} className="mx-2 flex-shrink-0">
-        <ItemCard catalogItem={item} />
+        <ItemCard key={item.id} catalogItem={item} />
       </li>
     ))}
     <button
