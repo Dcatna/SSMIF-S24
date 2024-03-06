@@ -28,7 +28,6 @@ def heartbeat():
 def add_item():
     item = request.json
     id = getLargestIndex() + 1
-    print({'id' : id, 'name' : item['name'], 'price' : item['price'], 'image' : item['image']})
     shopping_catalog.append({'id' : id, 'name' : item['name'], 'price' : item['price'], 'image' : item['image']})
     return "Trueeeeeeee"
 
@@ -36,8 +35,12 @@ def add_item():
 # A request to remove items from the catalog using an item id
 @app.route("/catalog/item/<item_id>", methods=["DELETE"])
 def remove_item(item_id):
-    shopping_catalog.remove(shopping_catalog[int(item_id)])
-    return "Trueeeeeeee"
+    for item in shopping_catalog:
+        if item['id'] == int(item_id):
+            if item:
+                shopping_catalog.remove(item)
+                return "Successful"
+    return "Not successful"
 
 
 

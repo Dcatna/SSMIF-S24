@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 export async function handleOnClick(previous, formData) {
-
+    console.log(formData.get("id"))
     const res = await fetch(`http://localhost:5000/catalog/item/${formData.get('id')}`, {method:'DELETE'}) //delete funciton for the catalog
     
     revalidatePath("/")

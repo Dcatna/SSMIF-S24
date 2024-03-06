@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className='sticky top-0 z-20'>
       
-        <div className='w-screen flex justify-center items-center bg-blue-600 opacity-75 h-10 '>
+        <div className='w-screen flex justify-center items-center bg-blue-700 opacity-75 h-10 '>
         
           <button className="mx-2 text-white">Home</button>
           <button className="mx-2 text-white">Items</button>
