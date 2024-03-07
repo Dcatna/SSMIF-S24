@@ -6,7 +6,7 @@ export async function handleOnClick(previous, formData) {
     console.log(formData.get("id"))
     const res = await fetch(`http://localhost:5000/catalog/item/${formData.get('id')}`, {method:'DELETE'}) //delete funciton for the catalog
     
-    revalidatePath("/")
+    revalidatePath("/") //revalidate the path so everything gets updated with the new items
     return true
 }
   
@@ -26,12 +26,12 @@ export async function fetchData() {
 }
 
 export async function addToCatalog(item) {
-    const res = await fetch(`http://localhost:5000/catalog/item`, { // Updated URL
+    const res = await fetch(`http://localhost:5000/catalog/item`, { 
         method: "POST",
         headers: {
-            'Content-Type': 'application/json', // Indicate we're sending JSON data
+            'Content-Type': 'application/json', //we want to send json format
         },
-        body: JSON.stringify(item), // Send item as JSON in the body
+        body: JSON.stringify(item), 
     });
     revalidatePath("/")
     return true

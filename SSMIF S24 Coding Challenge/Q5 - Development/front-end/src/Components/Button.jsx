@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react'
-
+//creating the same button everwhere
 const Button = (label, onClick) => {
     
   return (

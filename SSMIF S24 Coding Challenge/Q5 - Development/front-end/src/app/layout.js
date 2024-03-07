@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
        
       <body className="bg-neutral-50">
-        <Navbar></Navbar>
+        <Navbar></Navbar> {/*we pass the navbar so it is applied to all its children */}
         {children}
         </body>
     </html>

@@ -5,14 +5,14 @@ import 'reactjs-popup/dist/index.css';
 import { addToCatalog } from './Items/action';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle} from '@fortawesome/free-solid-svg-icons'
-
-
+//creating popup window for add items function
+//using reacts popup import
 const Pop = () => {
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
     const [imageUrl, setImageUrl] = useState("")
     const handleSubmit = () => {
-        if(name!="" && price!="" && imageUrl!=""){
+        if(name!="" && price!="" && imageUrl!=""){//making sure user is adding a valid item
             addToCatalog({
                 'name': name, 
                 'price': price, 

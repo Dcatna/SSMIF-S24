@@ -16,7 +16,7 @@ export default async function Home() {
     <main className="bg-neutral-50">
 
      
-      <Suspense fallback={<div>Loading..</div>}>
+      <Suspense fallback={<div>Loading..</div>}> {/*loading is displayed while the children load*/}
         <div className='justify-center items-center flex mt-8'>
           <ItemHoriScroll items={items}/>
         </div>
